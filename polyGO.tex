@@ -1,0 +1,1089 @@
+\documentclass{article}
+\usepackage{poly}
+
+\begin{document}
+
+\title{Faceting Riemannian manifolds}
+\author{Anton Petrunin}
+\date{}
+\maketitle
+
+
+\begin{abstract} 
+We give a description of the curvature tensors of Riemannian manifolds which admit Lipschitz approximation by polyhedral metrics with curvature bounded below or above.
+We show that the described curvature condition is also sufficient for existence of local approximations.
+
+We conjecture that this condition is also sufficient for the global approximations and prove it in some special cases.
+\end{abstract}
+
+
+%\addtocounter{section}{-1}
+\section*{Introduction}
+
+\parbf{Positive cosectional curvature.}
+Let $\EE^m$ denotes  $m$-dimensional Euclidean space.
+Denote by $\A^4(\EE^m)$ the space of all curvature tensors of Riemannian manifolds on the tangent space $\EE^m$.
+The $\O(m)$-rotations of $\EE^m$ induce isometric rotations of space of tensors  $\A^4(\EE^m)$.
+The subset of $\A^4(\EE^m)$ will be called \emph{$\O(m)$-invariant} if it is invariant with respect to these rotations.
+
+Let $Q_{\SS^2\times \RR^{m-2}}$ be the curvature tensor of $\SS^2\times \RR^{m-2}$.
+Denote by $\mathcal{S}^*$ the minimal convex $\O(n)$-invariant cone in $\A^4(\EE^m)$ that contains $Q_{\SS^2\times \RR^{m-2}}$.
+
+Let $M$ be a Riemannian manifold and $p\in M$;
+denote by $\Rm_p$ the curvature tensor of $M$ at $p$.
+We say that \emph{cosectional curvature} of $M$ at $p$ is at least (at most) $\kappa$
+if $\Rm_p-\kappa\cdot Q_{\SS^m}\in\mathcal{S}^*$, 
+or correspondingly $-\Rm_p-\kappa \cdot Q_{\SS^m}\in\mathcal{S}^*$,
+where $Q_{\SS^m}$ denotes the curvature tensor of unit $m$ sphere $\SS^m$.
+Briefly, these conditions can be written as $\cosec(\Rm_p)\ge \kappa$ and $\cosec_p\ge \kappa$ or correspondingly $\cosec(\Rm_p)\le \kappa$ and $\cosec_p\le \kappa$.
+The reason for the name \emph{cosectional} will become clear below, see 1.E.
+
+We will write $\cosec(M)\ge \kappa$ (or $\cosec(M)\le \kappa$) if $\cosec_p\ge \kappa$ (or, correspondingly, $\cosec_p\le \kappa$) for all $p\in M$.
+
+
+The following theorem gives an ``if and only if'' condition for the existance of local approximations of Riemannian manifold by polyhedral spaces with upper or lower curvature bound.
+
+Recall that a metric space is called \emph{$\kappa$-polyhedral spaces} if it admits a triangulation such that each simplex is isometric to a simplex in the model space of curvature $\kappa$.
+The $0$-polyhedral spaces are called \emph{Euclidean polyheral spaces},
+the $1$-polyhedral spaces are called \emph{spherical polyheral spaces}
+and
+the $(-1)$-polyhedral spaces are called \emph{hyperbolic polyheral spaces}.
+
+\begin{thm}{Local Theorem}
+ Let $P_n$ be a sequence of $m$-dimensional $\kappa$-polyhedral spaces
+with curvature $\ge \kappa$ (or $\le\kappa$) in the sense of Alexandrov.
+Assume $P_n$ Lipschitz converge to a Riemannian manifold $M$, then $\cosec(M)\ge \kappa$ (correspondingly $\cosec(M)\le \kappa$).
+
+Moreover if $M$ is a Riemannian manifold with $\cosec(M)\ge\kappa+\eps$ for some $\eps>0$
+then each point of $M$ has a neighborhood which is a Lipschitz limit of a sequence of
+polyhedral spaces with curvature $\ge \kappa$.
+\end{thm}
+
+
+\begin{thm}{Global Theorem} 
+Let $M$ be Riemannian $m$-manifold with $\cosec(M)\z\ge \kappa+\eps$ for some $\eps>0$.
+Assume that $M$ (or its finite cover) has
+stably trivial tangent bundle.
+Then $M$ admits a Lipschitz approximation
+by a sequence of $m$-dimensional $\kappa$-polyhedral metrics with curvature
+$\ge \kappa$.
+\end{thm}
+
+We expect that the condition on the tangent bundle can be
+removed from this formulation.
+The simplest interesting example which is not covered by the theorem is $\CP^2$ ---
+the complex projective plane with canonical metric.
+While
+$\cosec\CP^2\ge 0$,
+I can not construct an approximation of $\CP^2$ by polyhedral metric with curvature $\ge -\epsilon$.
+Also, I can not show that there is no such approximations with curvature $\ge 0$.
+Number of examples of polyhedral metrics on $\CP^2$ with curvature $\ge 0$ were constructed in [Pan].
+
+The Global Theorem above can be reduced to the cases $\kappa= \{-1,0,1\}$,
+in the first and last case using rescaling one can get an approximation
+of $(M,g)$ with polyhedral metrics with curvature $\ge \kappa$.
+In case $\kappa=1$, the condition $\cosec M\ge 1$ implies, in particular, that curvature
+operator of $M$ is strictly positive (see 1.E).
+In particular, from Micallef--Moore theorem [MM] it follows that universal cover $\widetilde M$ must be homeomorphic (and by B\"ohm--Wilking theorem [BW] diffeomorphic) to
+a sphere.
+In particular, $\widetilde M$ has stably trivial tangent bundle and therefore
+we get the following:
+
+
+\begin{thm}{Corollary} 
+An $m$-manifold $M$ admits a Lipschitz approximation by
+spherical polyhedral metrics with curvature $\ge 1$ 
+if and only if $\cosec(M)\ge 1$.
+\end{thm}
+
+\parbf{About the proofs.}
+The necessity of the curvature bound follows from the fact that all curvature
+of a polyhedral metric lives on hyper-edges;
+that is, the simplexes of codimension $2$ of the triangulation of the polyhedral space.
+Around every hyper-edge the metric looks like $C\times \RR^{m-2}$,
+where $C$ is a two-dimensional cone.
+Thus the ``curvature'' at the vertex of $C$
+looks pretty much like curvature of $\SS^2$ with zero radius,
+ and this allows us to view the ``curvature'' at the edge as curvature of
+$\SS^2\times \RR^{m-2}$ (which is $(x\wedge y)^2$) multiplied by a
+Hausdorff measure of edge.
+ When a space is approximated by polyhedral metrics the curvature
+tensors of different edges could mix with each other;
+that is, the limit
+manifold must have curvature tensor
+which is convex combination of the curvatures of above form,
+in other words, it will satisfy condition
+ $\cosec M\ge 0$.
+
+It gives only an idea, the real proof contains much of technical work; it was recently done by Nina Lebedeva [Leb].
+This part of the proof is not included in this paper but I include the unpublished result of Perelman on which the this part of the proof is based in the Appendix B.
+
+To prove the sufficient condition, we construct an isometric embedding $(M^m,g)\hookrightarrow\RR^q$ such that its image is an intersection of $q-m$ open convex hyper-surfaces with obtuse angles between their outer normals at any point of $M$.
+This condition on the angles alone implies $\cosec M>0$.
+
+Next we consider an approximation of convex hyper-surfaces
+by convex polyhedral hyper-surfaces with the same condition on the angles between the outer normals.
+The needed polyhedral approximation is the intersection of these
+polyhedral hyper-surfaces. 
+That proves the local theorem.
+
+Now let us describe the idea for Global Theorem.
+For simplicity assume that $M$ is simply connected.
+Using that $\T\,M$ is stably trivial we realize $M$ as an intersection of open convex hyper-surfaces with
+the same conditions on angles and then do the same approximation as above.
+The proof of this last representation is technical. 
+If such representation exists, we have that $\N\, M$, the normal bundle of
+$M$, is trivial; in particular the tangent bundle $\T\, M$ should
+be stably trivial.
+The latter explains how the condition on the tangent bundle in the Global Theorem comes into the game.
+
+\medskip
+
+The main part of this work was done during my stay at the IHES in 1999--2000. I would like to thank this institute for support and hospitality.
+I want to thank 
+G.~Perelman for sharing ideas and making me interested in this problem long before this publication; 
+V.~Voevodsky for bringing paper
+of D.~Hilbert to my attention. 
+I want to express my very special thanks to J.~Eschenburg and S.~Kozlov who constructed for me
+examples of curvature tensors and pulled me out from a
+dead end in this research and to R. Matveyev and D. Panov for helpful and interesting conversations and letters.
+
+
+\section{Notation, Definitions and Preliminaries}
+
+
+
+\parbf{1.A. Polyhedral spaces with curvature bounded below or above.}
+
+
+A connected simplicial complex $P$ is called \emph{pseudomanifold}
+if the link of each simplex in $P$ is connected or $\SS^0=\{-1,1\}$.
+
+Let us denote by $\MM^q[\kappa]$ the $q$-dimesional simply connected space of constant curvature $\kappa$.
+A pseudomanifold $P$ equiped with a metric 
+such that each
+simplex is isometric
+to a simplex in $\MM^m[\kappa]$
+is called
+\emph{$\kappa$-polyhedral space}. 
+
+A $\kappa$-polyhedral space has curvature bounded below  if  the sum of angles
+around any hyper-edge (that is, simplex of codimension $=2$) is $\le 2\pi$.
+In this case the polyhedral space has curvature  $\ge \kappa$ in the sense of Alexandrov.
+
+In all what follows we will assume $\kappa=0$,
+but if it is not specially
+mentioned everything below is true for any $\kappa$;
+one ony has exchange $\RR^q$ to $\MM^q[\kappa]$.
+
+%???NEG curv???
+
+
+\parbf{1.B. Convex submanifolds of higher codimension.}
+
+
+\begin{thm}{Definition}
+ A submanifold $M \i \RR^q$ is called
+\emph{locally convex} if each point of $M$ has a neighborhood $U$, for which
+there is a collection of
+ (strictly) convex, possibly open, hyper-surfaces $F_i$,
+such that $U=\bigcap_i F_i$ and moreover at each point of $U$ the angle between
+outward normals to any pair of $F_i$ is obtuse.
+\end{thm}
+
+
+If $M$ is $C^2$-smooth then the above property is equivalent to the following condition:
+ at each point $x\in M$ there is an orthonormal
+basis $\{e_i\}\i \N_x M$, where $\N M$
+is normal bundle of $M\i \RR^q$, such that the representation of
+the second fundamental form
+$s\:\S^2(\T_xM)\to \N_x M$ in this basis $s=\sum_i e_i s_i$
+has all quadratic forms $s_i\in \S^2(\T)$ positively defined.
+
+This property can be also interpreted as the following: the submanifold is
+locally convex if it can be viewed locally as a convex hyper-surface
+in a convex hyper-surface in ... in $\RR^q$.
+
+It is easy to see that locally convex submanifold
+has positive curvature
+(for the induced intrinsic metric in the sense of Alexandrov).
+If the submanifold is smooth,
+one can say  more about its curvature tensor,
+but to make it precise we must discuss a little the
+curvature tensor of Riemannian manifold and curvature of submanifolds
+in $\RR^q$.
+
+
+\parbf{1.C. Curvature tensors of submanifolds.}
+Here we introduce an extrinsic curvature for submanifolds.
+The source for this subsection is [Grom]$_{\text{PDR}}$ 3.1.5.
+
+
+Let $\T$ be a vector space with a scalar product, $\T^n$ will denote
+its tensor power of degree $n$, $\S^n(\T)$ and $\Lambda^n(\T)$ will
+denote correspondingly subspace of symmetric and antisymmetric
+elements of $\T^n$. The scalar product on $\T$ canonically induces a
+scalar product on $\T^n$ and all its subspaces.
+
+The following subspace of $\T^4$
+$$\A^4(\T)=\Lambda^4(\T)^\bot\cap \S^2(\Lambda^2(\T))$$
+formed by all possible curvature tensors
+on the tangent space $\T$.
+In an equivalent way this subspace $\A^4\i \S^2(\Lambda^2(\T))$
+can be described  as the space of all tensors in $\S^2(\Lambda^2(\T))$
+satisfying the first Bianchi identity
+$$\Rm(X,Y,Z,W)+\Rm(Y,Z,X,W)+\Rm(Z,X,Y,W)=0.$$
+In particular, it does not depend on the choice of scalar product on $\T$.
+
+\
+
+
+
+Let $M\i \RR^q$ be a smooth submanifold and $s_x\:\S^2(\T_xM)\to \N_x M$
+is its second
+fundamental form at $x\in M$,
+here $\T\,M$ and $\N\, M$ are respectively tangent and normal bundle over $M$.
+Consider the \emph{$\Phi$-curvature tensor}
+$$\Phi (X,Y,Z,W)= \langle s(X,Y),s(Z,W)\rangle,$$
+here $\Phi$ is a section of $\S^2(\S^2(\T M)$.
+
+Tensor $\Phi$ admits the representation
+$$\Phi(X,Y,Z,W)=E(X,Y,Z,W)+{\frac 1 3}\biggl(\Rm(X,Z,Y,W)+\Rm(X,W,Y,Z)\biggr)
+\eqno(*)$$ 
+where $E$ is total symmetrization of $\Phi$; that is,
+$$E(X,Y,Z,W)={\frac 1 3}
+\biggr(\Phi(X,Y,Z,W)+\Phi(Y,Z,X,W)+\Phi(Z,X,Y,W)\biggl)\in \S^4(\T)$$
+ and
+$$\Rm(X,Y,Z,W)=\Phi(X,Z,Y,W)-\Phi(X,W,Y,Z)\in \A^4(\T)$$
+is the Riemannian curvature tensor of $M$.
+
+Tensor
+$E$ represent \emph{ extrinsic curvature},
+$E\in \S^4(\T)\i \S^2(\S^2(\T))$ and it
+behaves as an entropy of the embedding,
+the more the embedding is wrinkled the bigger $E$ gets.
+Note that
+$f(X)=E(X,X,X,X)=|s(X,X)|^2$
+is homogeneous polynomial of degree $4$ on $\T$ 
+and it describes $E$ completely.
+
+There are two reasons to use tensors $\Phi$ and $E$: 
+\begin{itemize}
+\item The tensor tensors $\Phi$ depends only on elements of $\T$, 
+in particular it does not depend even on dimension of ambient space.
+This way we can study isometric embeddings without direct referring to the ambient space.
+\item Direct
+construction shows that $\Phi$ describes the second fundamental
+form $s\:\S^2(\T)\to \N$
+up to an isometric rotation of $\N$;
+that is, two second
+fundamental forms $s_1,s_2\:\S^2(\T)\to \N$ 
+give the same $\Phi\in\S^2(\S^2(\T))$ if and only if there is an isometric rotation
+$j\:\N\to \N$, such that $j\circ s_1=s_2$. 
+In particular, since
+$\Phi$ is a sum of Riemannian curvature tensors and $E$, we have
+that if $(M,g)$ is a Riemannian manifold and $(M,g)\to \RR^q$ is
+an isometric embedding then $E$-tensor together with $g$ describes
+the second fundamental form at each point up to an isometric
+rotation.
+\end{itemize}
+
+
+
+
+\parbf{1.D. Positiveness of elements of $\S^2(\S^2(\T))$
+and convexity of submanifold.}
+Most of this subsection is extracted from [Grom]$_{\text{PDR}}$ 2.4.9B(4).
+
+Given a open convex cone $\mathcal{C}$
+in an Euclidean space $\EE^n$, set
+$$\mathcal{C}^*=\set{r\in \EE^n}{\langle r,r'\rangle >0 \text{ for all }r'\in \mathcal{C}}.$$
+
+\begin{thm}{Definition} A tensor $\Phi\in \S^2(\S^2(\T))$
+is positive ($\Phi> 0$), if there is a
+representation $\Phi=\sum_i s_i^2$, where $s_i$ are positively defined
+quadratic forms on $\T$.
+If $i\:M\to \RR^q$ is a smooth embedding we will write
+$\Phi(i)>0$ if $\Phi$-tensor of $i(M)\i \RR^q$ is positive
+at $i(x)$ for all $x\in M$.
+\end{thm}
+
+
+The cone of positive tensors in $\S^2(\S^2(\T))$ form a convex
+$\GL(\T)$-invariant cone of tensors;
+that is, this cone is invariant with respect to the action of $\GL(\T)$ induced on $\S^2(\S^2(\T))$.
+If $\text{dim }\T\ge 2$ then
+there are other $\GL(\T)$ invariant cones in $\S^2(\S^2(\T))$, one of
+these cones will be of particular interest for me: namely the cone
+of all elements $\Phi=\sum_i s_i^2$ for arbitrary elements $s_i\in
+\S^2(\T)$. This cone describes all elements of $\S^2(\S^2(\T))$ which
+can appear as $\Phi$-curvature of a submanifold.
+
+
+Note that existence of representation of the second fundamental form
+$s\z=\sum_i s_ie_i$ with
+positively defined $s_i\in \S^2(\T)$
+implies, in particular, that $\Phi\z=\sum_i s_i^2$;
+that is, $\Phi> 0$.
+Since $\Phi$-tensor describes the second fundamental form completely the
+last property is equivalent to the fact that
+$M\i \RR^q$ is ``stably'' locally convex.
+Namely, if  $\Phi>0$ on $M$ then
+for some $k$ we have
+that correspondent submanifold $M\i \RR^q=\RR^q\times 0\i \RR^q\times \RR^k$
+is locally convex, as a submanifold in $\RR^q\times \RR^k$.
+(Given $k\in \NN$ there are examples of submanifold $M\i \RR^q$
+which is not convex as a submanifold $M\i \RR^q\times 0\i \RR^q\times \RR^k$
+but is convex as a submanifold $M\i \RR^q\times 0\i \RR^q\times \RR^{k+1}$.)
+
+
+\parbf{1.E. Positiveness of curvature tensor and symmetric $4$-tensors.}
+The space $\S^2(\S^2(\T))$ splits into two subspaces,
+the first is $\S^4(\T)\i \S^2(\S^2(\T))$ and the second is
+$\A^4_+(\T)=\S^4(\T)^\bot\cap \S^2(\S^2(\T))$
+which is canonically isomorphic to space of algebraic curvature tensors
+$\A^4(\T)=\Lambda^4(\T)^\bot\cap \S^2(\Lambda^2(\T)$.
+
+
+
+$\A^4(\T)$. 
+Consider cone $\mathcal{S}^*$ which consists of all tensors
+$$\Rm(X,Y,Z,T)=\sum_i s_i(X,Z)s_i(Y,T)-s_i(X,T)s_i(Y,Z),$$ where
+$s_i$  are positive elements of $\S^2(T)$. 
+We say that such
+curvature tensors have positive cosectional curvature;
+this can be written as $\cosec (\Rm)>0$. 
+For a Riemannian manifold $M$ we will write $\cosec (\Rm_p)>0$ or $\cosec_p>0$ if
+curvature tensor at $p\in M$ has positive cosectional curvature and
+$\cosec M>0$ if the cosectional curvature of $M$ is positive at
+all $p\in M$.
+
+The curvature tensors with positive cosectional curvature are exactly
+those which can be curvature tensors of submanifolds with positive
+$\Phi$-curvature (or equivalently strictly convex submanifolds see 1.D);
+that is,
+\begin{align*}
+\cosec(&\Rm)>0
+\\
+&\Updownarrow
+\\
+\Rm(X,Y,Z,W)=\Phi(X,Z,Y,W)&-\Phi(X,W,Y,Z) \text{ for
+some } \Phi>0.
+\end{align*}
+As you will see, any closed Riemannian
+manifold $M$ with $\cosec M>0$ admits a smooth isometric embedding
+$i\:M\to \RR^q$ with $\Phi(i)>0$ (in fact, $q$ can be taken
+$=(n+2)(n+5)/2$, see [Grom]${}_{\text{PDR}}$ 3.1.5(A) and
+3.1.2(C)]). 
+Cone $\bar{\mathcal{S}}^*$, the closure of $\mathcal{S}^*$ can also be
+described as minimal convex $O(\T)$-invariant cone which contains
+curvature tensor of product metric space $\SS^2\times \RR^{n-2}$.
+
+The dual cone $\mathcal{S}$ (see 1.D) consists of curvature tensors with
+positive sectional curvature.
+For a point $p$ in a Riemannian manifold,
+we will write $\sec_p>0$ or $\sec(\Rm_p)>0$ meaning
+that $\Rm_p\in \mathcal{S}$.
+
+
+The cones $\mathcal{S}^*$ and $\mathcal{S}$ are the smallest and biggest
+$\GL(\T)$-invariant cones in $\A^4(\T)$. Other $\GL(\T)$-invariant cones
+will lie between $\mathcal{S}^*$ and $\mathcal{S}$.
+In particular the cone $\mathcal{Q}$ of
+all curvature tensors with positive curvature operator;
+that is,
+$$\mathcal{Q}=\set{R\in \A^4(\T)\i \S^2(\Lambda^2(\T))}{R=\sum_i\phi_i^2 \text{
+for } \phi_i\in \Lambda^2(\T)},$$ is one of them.
+If the dimension is big enuf, then $\mathcal{Q}\not=\mathcal{S}^*$.
+Namely if dimension $=2$ or $3$
+then $\mathcal{Q}=\mathcal{S}^*$ and therefore $\mathcal{S}=\mathcal{Q}=\mathcal{S}^*$.
+In dimension $4$, we have $\mathcal{Q}=\mathcal{S}^*$ and
+$\mathcal{Q}^*=\mathcal{S}$.
+It follows from the \emph{Thorpe's characterization} of curvature tensors with positive
+sectional curvature,  namely, if $M$ is positively curved
+$4$-manifold then there is a function $f$ on $M$ such that
+$\Rm_x+f(x)\omega\in \S^2(\Lambda^2(\T_x))$ is a section of positive
+quadratic forms on $\Lambda^2(\T)$, here $\omega$ denotes the
+volume form, a section of $\Lambda^4(\T)\i \S^2(\Lambda^2(\T))$, see
+[Zol] for details.
+
+In dimension $5$ and higher, all the inclusions 
+\[\mathcal{S}\subset \mathcal{Q}^*\subset\mathcal{Q}\subset\mathcal{S}^*\]
+are strict.
+Indeed: evidently, the inclusion $\mathcal{Q}^*\subset\mathcal{Q}$ is strict.
+The inclusion $\mathcal{S}\subset \mathcal{Q}^*$ is strict if and only if so is
+$\mathcal{Q}\subset\mathcal{S}^*$.
+The later is shown by example, see
+[Zol].
+
+(In [Grom]$_{SGMC}$, Gromov states opposite. He writes \emph{ ``The closer of this cone (given by $Q\ge 0$) [this is, $\bar{\mathcal{Q}}$ in our notations] can be defined as the minimal
+closed convex $O(n)$-invariant cone which contains the curvature
+of the product metric on $\SS^2\times \RR^{n-2}$ [which is, $\bar
+{\mathcal{S}}^*$ in our notations].''}...)
+
+\
+
+$\S^4(\T)$. Consider cone $C_+$ which we will call cone of \emph{
+positive forms}. It consists of all forms $E\in \S^4(\T)$ such that
+$E=\sum s_i^{\circ 2}$, where $s_i^{\circ 2}$ is symmetric square
+of positively definite quadratic form $s_i$. We will write $E>0$
+if $E\in C_+\i \S^4(\T)$. Again, tensor $E$ is positive if it is a
+symmetric part of positive $\Phi$-tensor in
+$\S^2(\S^2(\T))$.\footnote"$^\bigstar$" {By the way $C_+$ is also the
+smallest $\GL(\T)$-invariant cone in $\S^4(\T)$. The biggest such cone
+$C^*_+$ consists of all symmetric $4$-form $E$ such that
+$$E(X,X,X,X)>0$$ for any non zero $X\in \T$. 
+Gromov in
+[Grom]${}_{\text{PDR}}$ 3.1.4 states that a symmetric form in
+$E\in \S^{2k}(\T)$ is positive if and only if correspondent
+quadratic form $E(\S^2(\T^k))\to \RR$ is positively defined.
+In our notations, it is equivalent to $C_+=Q_+$, and
+this is equivalent to $C_+^*=Q_+^*$. 
+The cone $C_+^*$ is nothing
+but set of all positively defined forms in $\S^{2k}(\T)$,
+equivalently it is set of positively defined homogeneous degree
+$2k$ polynomials on $\T$. Analogously the cone $Q_+^*$ is the set
+of homogeneous degree $2k$ polynomials on $\T$ which can be
+expressed as sum of squares. Therefore this statement is
+equivalent to the fact that \emph{ each positively defined
+polynomial is a sum of squares of polynomials}, and this was shown
+to be wrong in general, namely Hilbert [Hil] showed that this
+statement is true ONLY in the following three cases: (i)
+$\text{dim}\T\le 2$ and any $k$, (ii) $k=1$ and any $\text{dim}\T$,
+(iii) $k=2$ and $\text{dim}\T=3$. This does not affect the rest of
+the book, except that reader must use (practically always) the
+$C_+$-sense for positiveness.}
+
+
+\
+
+
+\section{Proofs}
+
+
+I will not give here a proof of the first part of the local theorem
+by two reasons: first it is real pain to write and read and second it is not really mine.
+The proof I have is just a modification of one unpublished Perelman result.
+Since this result of Perelman was never published and (as far as I know) was never written,
+I put it in the Appendix B (It is more fun to look at the original proof then at my compilations).
+
+
+\parit{Proof of the second part of Local Theorem.}
+Let us prove first that
+if $(M,g)$ is a Riemannian manifold with $\cosec M>0$
+then $(M,g)$ is isometric to a convex submanifold in $\RR^q$.
+This is equivalent to the fact that there is an isometric embedding
+$i\:M\to \RR^q$, such that
+$\Phi(i)>0$ (see 1.D).
+
+In general, a smooth isometric embedding of $(M,g)$ with $\cosec M>0$
+may have undefined $\Phi$-tensor, but there is a way to make it positive.
+
+Consider any smooth free isometric embedding  $i\:(M,g)\to\RR^q$, then by
+Theorem [Grom]${}_{\text{PDR}}$ 3.1.5(A) for any tensor field $E\i \S^4(\T)$
+such that $E_x>0$ (see 1.E) at all $x\in M$
+one can find a $C^1$-close isometric embedding
+$i'\:(M,g)\to \RR^q$, such that $E(i')=E(i)+E$.
+In particular, one may choose $E=cg^{\circ 2}$ for any $c>0$.
+Since $\cosec M>0$ the number $c$ can be chosen  big enuf so that
+at $\Phi(i')>0$.
+
+(Let us describe a more direct way to construct $i'$ with $E(i')=E(i)+E$ for $E=c\cdot g\circ g$.
+First construct an isometric embedding $j\:\RR^q\to \RR^{q'}$,
+such that
+$E(j)=c\cdot h^{\circ 2}$, where $h=\sum_{i=1}^q (dx_i)^2$
+is the unit $2$-form on $\RR^q$ and then take $i'=j\circ i$.
+One can construct $j$ on the following way:
+first choose a collection of linear functions $l_i\:\RR^q\to \RR$
+such that $h^{\circ 2} = \sum_i (dl_i)^4$ then take diagonal
+of product of the following mappings: a linear mapping $L\:\RR^q\to \RR^q$
+and twists $\tau_i\: \RR^q\to \RR^2$,
+\[\tau_i(x)=
+\bigl(a_i\cdot  \sin \bigl(b_i\cdot l_i(x)\bigr),a_i\cdot  \cos \bigl(b_i\cdot l_i(x)\bigr)\bigr)\]
+with appropriately chosen $a_i$ and $b_i$.)
+
+Now, since $M\i \RR^q$ is a convex submanifold there is an open
+set $U\i M$ which is an intersection of open convex hyper-surfaces
+$F_i$ with obtuse angle between each pair of outward normals
+everywhere on $U$.
+Approximate each $F_i$ as a convex polyhedral hyper-surface $F_i^\epsilon$ keeping the angles obtuse.
+The intersection $U^\epsilon$ of all $F_i^\epsilon$ is obviously polyhedral submanifold
+and it has curvature $\ge 0$ (see B). Cutting subdomains from
+$U^\epsilon$ if necessary one gets the needed approximation. \qeds
+
+
+\parit{Proof of Global Theorem.} Let us first assume that
+$\T M$ is stably trivial.
+We will represent our submanifold $M$ as
+an intersection of (open) convex hyper-surfaces with angles between any pair of outward normals $>\pi/2$
+everywhere on $M$.
+Tio finish the proof, we repeat the construction from  Local Theorem.
+
+Existence of such representation is obviously equivalent to the
+existence of a smooth section of orthonormal bases $\{e_i\}$ in
+$\N\, M$ such that $s=\sum_i s_i e_i$ with positively defined
+$s_i\in \S^2(\T)$.
+
+Consider a cover $U_k$, $k\in \{1,2,..,n\}$
+of $M$ such that on each $U_k$ there is a smooth section of
+orthonormal bases $\{e_{i,k}\}\i \N\,M$ with the above properties.
+Since $\T M$ is stably trivial we can assume that $\N\,M$ is a trivial bundle.
+Therefore we
+can extend these bases to all $M$, and get $n$ bases
+$\{e_{i,k}\}$ for all $\N\,M$.
+Therefore at each point we have an isometric rotation $E_{k,k'}\in O(q-m)$
+which sends $\{e_{i,k}\}$ to $\{e_{i,k'}\}$.
+Without loss of generality we can assume that correspondent mapping
+$E_{k,k'}\:M\to O(q-m)$ is homotopic to a trivial one.
+Now let us take a smooth partition of unity $u_k\:M\to [0,1]$,
+$u_k|_{M\backslash U_k}\equiv 0$ and
+$\sum_k u_k(x)\equiv 1$ for all $x\in M$.
+At each point $x\in U_k\i M$ we have
+$\Phi_x\equiv \sum_i s_{i,k}^2$.
+Therefore for each $x\in M$ we have
+$\Phi_x\equiv \sum_{i,k} u_k(x) s_{i,k}^2$.
+Consider $n\N\,M=\N_1 M\oplus \N_2 M\oplus ...\oplus \N_n M$,
+the sum of $n$ copies of the normal bundle,
+take the basis $\{e_{i,k}\}$ for $\N_k$, and consider the subbundle $\N_\Delta(M)$,
+which is spanned by
+$(\sqrt u_1 e_{i,1}, \sqrt u_2 E_{12}e_{i,1},..., \sqrt u_n E_{1n}e_{i,1})$.
+It is obviously a trivial subbundle with trivial orthogonal subbundle.
+Therefore, if one considers $\RR^{(n-1)(q-m)}\times \N\,M$ then there is
+a bundle isomorphism $i\:n\N\,M\to \RR^{(n-1)(q-m)}\times \N\,M$
+which is an isometry on each fiber, which sends
+$\N_\Delta M$ to $\N\,M$ and moreover
+if $p_\Delta\:\N^n\to \N_\Delta$ is the orthogonal projection then $i\circ p_\Delta (e_{i,k})=\sqrt u_k e_{i,k}$.
+
+Therefore, we get a smooth section of orthonormal bases
+$\{e_{i,k}\}\i \N'M=\RR^{(n-1)dim(\N_x)}\times \N\, M$;
+that is if we had $\N\,M$ as a normal bundle of $M\i \RR^{q}$ then $\N'M$ is a
+normal bundle of $M\i \RR^{q}\times 0\i \RR^{q}\times
+\RR^{(n-1)(q-m)}$. Now for each pair of indexes $i,k$ we have a
+nonnegative quadratic form $s_{i,k}= \langle s,e_{i,k}\rangle$,
+$\Phi_x\equiv \sum_{i,k} u_k(x) s_{i,k}^2$ and at each point we
+have at least one quadratic form which is strictly positive. It is
+not hard to rotate basis $e_{i,k}$ a little to get a new smooth
+section of bases in $\N'M$ with representation $s= \sum_{i,k}
+e_{i,k}(s'_{i,k})$ where each $s'_{i,k}$ is strictly positive.
+
+If $\T M$ is not stably trivial one still can find an embedding $M\to \RR^q$
+which has positive $\Phi$-curvature at each point.
+Take a small tubular neighborhood $U$ of $M$.
+Let $\tilde M$ be a finite cover of $M$ such that $\T \tilde M$ is stably trivial.
+ We can assume that $\N\,\tilde M$
+is trivial, therefore $\N\,M$ is equivalent to a flat bundle.
+From the above we get existence of
+flat bundle $U'\to U$ such that the new induced normal bundle of $M$ with
+respect to $U'$ is trivial. $U'$ is an open flat manifold and that
+makes possible to repeat the same construction as above.
+\qeds
+
+
+
+\section{Remarks on curvature bounded above}
+
+
+
+
+One can also ask a similar question for approximations by polyhedral spaces 
+with upper curvature bound (in the sense of Alexandrov). The similar answer can be obtained on the similar way.
+
+
+\begin{thm}{Local Theorem} Let $P_n$ be a sequence of $m$-dimensional
+polyhedral spaces
+with curvature $\le \kappa$, which Lipschitz converge to a
+Riemannian manifold $(M,g)$ of the same dimension, then $\cosec M\le \kappa$.
+\end{thm}
+
+Unfortunately, I can not find as nice characterization for the Global Theorem
+as in the case of curvature bounded below. Here is what I can do:
+
+
+\begin{thm}{Global Theorem.}
+ If $(M,g)$ is Riemannian $m$-manifold with $\cosec M\le \kappa$.
+Assume that $M$ 
+is diffeomorphic to a direct product of manifolds which care constant 
+negative curvature, then $M$ can be realized as a Lipschitz limit
+of sequence of $m$-dimensional polyhedral metrics with curvature
+$\le \kappa+\epsilon$ for arbitrary $\epsilon>0$.
+\end{thm}
+
+The proof of local theorem is practically the same as for curvature bounded 
+below. Perelman's Lemma (which is the main technical tool in the proof) is 
+also true for negative curvature, 
+(infact it it true in all lenght-metric spaces which have 
+enuf convex functions).
+
+The proof of the global theorem is also very similar, but one should consider 
+embeddings into (non complete) flat pseude Riemannian manifold, which is locally isometric to $\RR^{m,q}$  as a space-like submanifolds of maximal dimension $m$ with trivial normal bundle.
+ Unfortunately it is not clear which manifolds admit such an embedding, but it is clear that if it does then the universal cover of $M$ is diffeomorphic to $\RR^m$. 
+In particular $M$ is $K(\pi,1)$ space, but so far I can not say much useful 
+about $\pi$. On the other hand if $M$ cares a metric of constant negative curvature then it is a factor of pseudosphere in $\RR^{m,1}$ along some group,
+and factor of a little neighborhood of the pseudosphere along this subgroup gives the needed ambiant manifold. Taking product of such manifolds one has the needed embeddings for products of such manifolds.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Problem section}
+
+
+The opposite question;
+that is, which polyhedral metrics
+could be smoothed to a Riemannian manifold with positive curvature,
+is still open. All examples I know so far meet the following
+
+
+\begin{thm}{Conjecture} Any polyhedral metric with curvature $\ge \kappa$
+can be smoothed in to a Riemannian orbifold with cosectional
+curvature $\ge \kappa-\epsilon$.
+\end{thm}
+
+In case of dimension $=2$ the above Conjecture is a trivial
+corollary of Alexandrov's embedding theorem [Al]. In dimension
+$=3$, one can smooth each vertex using the same Alexandrov's
+embedding theorem (this time we need embedding of surface of
+curvature $\ge 1$ into $\SS^3$) and one can do the smoothing in such
+a way that the only singular points left will be ``midpoints of
+edges'' and these singular points are conic. Then one can smooth
+the remaining points in the same way.
+
+The conjecture would imply, in particular,
+that any simply connected
+manifold with positive cosectional curvature is diffeomorphic
+to a sphere.
+Indeed the Corollary 0.3
+implies that if $M$
+is a Riemannian manifold with $\cosec M\ge 1$ then it can be approximated by polyhedral spaces $X_n$
+with curvature $\ge 1$.
+ Therefore the spherical suspension $\SS(M)$ is approximated by $\Sigma (X_n)$ (cf. [GW]).
+Now from the conjecture it would follow that $\Sigma(X_n)$ is smoothable into Riemannian orbifold and therefore $M$ is a quotient of a sphere.
+
+\
+
+An other question is whether the condition of stably trivial tangent bundle
+can be removed from Theorem 0.2.
+ So far, I can not even construct an approximation of
+$(\CP^2,\text{can})$ by polyhedral metrics with curvature
+$\ge -\epsilon$.
+
+One may ask whether it is possible to construct an approximation
+of $(\CP^2,\text{can})$ by polyhedral metrics with curvature
+$\ge 0$. This is already a rigid question, in particular, from
+Cheeger's results [Ch] it is easy to see that any nonnegatively
+curved polyhedral metric on $\CP^2$ carries complex structure.
+As it was pointed out by Mikhail Gromov,
+$\CP^2$ carries polyhedral
+metrics with curvature $\ge 0$ 
+[for example, take nonnegatively
+curved polyhedral metric on $\SS^2$ then the space of all pairs of
+points in $\SS^2$ homeomorphic to $\CP^2$ and naturally comes with
+nonnegatively curved polyhedral metric] altho it is not clear
+whether such metrics can approximate canonical metrics on $\CP^2$, (see [Pan] for more examples and general discussion of 
+polyhedral spaces with complex structure). 
+
+
+Is there any way to generalize Alexandrov embedding theorem? For
+example, is it possible to characterize Riemannian manifolds which
+are isometric to a complete convex hyper-surface in a complete
+convex hyper-surface in ... in $\RR^q$? 
+Is it true that any simply
+connected Riemannian manifold $M$ with $\cosec M>0$ is isometric to one of
+those? 
+Again, if this manifold is compact it would immediately
+give that any such manifold is diffeomorphic to standard sphere.
+
+
+Is it possible to charactarise $m$-manifolds which adimits an embedding 
+into flat open $(m,q)$-pseudo-Riemannian maniflod as a space-like surface?
+(It is easy to see that if such an embedding exist then 
+the univeral cover of $M$ is diffeomorphic to $\RR^m$, plus the first homotopy group must be linear, but I do not think it is enuf for existance of such embedding.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+\appendix
+\section{Example of positive curvature tensor which cosectional curvature is not positive}
+
+
+
+
+Here I present calculations of J.Eschenburg, which show that
+curvature tensor $R$ of $\SU(3)$ with bi-invariant metric has
+non-negative curvature operator but it is not true that $\cosec M\ge 0$.
+This gives an example for dimension $\ge 8$, from the work of
+Zoltek [Zol] it follows that such examples exist for dimension
+$\ge 5$ but the calculations below much simpler and I hope that it
+will be useful for a reader who wants quickly convince him-self
+that such monsters do live.
+
+\
+
+Consider Lie algebra $su(3)$, and adjoint representation
+ad$\:su(3)\to \Lambda^2(su(3))$. The curvature operator of $\SU(3)$
+with bi-invariant metric has curvature operator
+$R\:\Lambda^2(su(3))\to \Lambda^2(su(3))$ which coincide with
+projection on Im$(ad)$.
+
+Now if one can prove that $Im(ad)$ has no simple bi-vector inside
+then it will follow that curvature operator of $\SU(3)$ with bi-invariant metric
+does not have positive cosectional curvature.
+
+Therefore we only have  to show that if $0\not=x\in su(3)$ then
+$ad_x\in \Lambda^2(su(3))$ is not a simple bi-vector, i.e $\not=
+v\wedge w$.
+
+It is sufficient to prove it for $ad_x$, where $x$ is tangent to a
+maximal torus of diagonal elements in a matrix representation.
+Therefore in the matrix representation it looks like
+$x=diag\{ai,bi,ci\}$ with $a+b+c=0$. Take the standard real basis
+in $su(3)$, which comes from matrix form;
+that is, take
+ $A_1=diag \{i,0,-i\},A_2=diag \{0,i,-i\}$, take
+ $F_1=e_2\wedge e_3,F_2= e_3\wedge e_1,F_3=e_1\wedge e_2$ be real and
+$E_1=i e_2\circ e_3,E_2=i e_3\circ e_1,E_3=i e_1\circ e_2$
+imaginary parts of basis, here $e_1,e_2,e_3$ is a basis of $\CC^3$
+where $\SU(3)$ acts.
+
+Then by the direct calculation we have
+ad$_x=(c-b)F_1\wedge E_1+(a-c)F_2\wedge E_2 + (b-a) F_3\wedge E_3$,
+now the fact that bi-vector $\phi\in \Lambda^2(\T)$
+is simple is equivalent to $\phi\wedge\phi=0$, and
+$$ad_x\wedge ad_x=$$
+$$=(c-b)(a-c)F_1\wedge E_1\wedge F_2\wedge E_2
++
+(a-c)(b-a)F_2\wedge E_2\wedge F_3\wedge E_3
++$$
+$$+(b-a)(c-b)F_3\wedge E_3\wedge F_1\wedge E_1$$
+Therefore if ad$_x$ is simple then at least two
+of numbers $(c-b),(a-c),(b-a)$ are zeros
+and since $a+b+c=0$ we have that  $a=b=c=0$; that is, $x=0$. \qeds
+
+
+
+\section{A theorem of Perelman and why I need it.}
+
+
+In this appendix I will present the proof of one unpublished
+result of G.Perelman, on which idea I build the proof of the first
+part of Local Theorem.
+
+Let $M$ be an Alexandrov $m$-space and $U\i M$ be an open subset.
+Let $F\:U\to \RR^m$ be a chart $F(p)=(x_1(p),x_2(p),...,x_m(p))$.
+We say that $F$ is convex if each of co-ordinate functions $x_i$
+is convex. The proof of the following claim easily follows from
+Proposition 3 [Per]
+
+
+\begin{thm}{B.1 Claim} Let $g$ be a convex function on $U$ and for some
+convex chart $F\:U\to \RR^m$ we have $\partial g/\partial x_i< 0$
+then $g\circ F^{-1}$ is a convex function on $F(U)$. Moreover for
+any $p\in U$ and  $v\in \T_p$ we have
+$$\nabla^2_vg\le\nabla^2_{dF(v)}\bigl(g\circ F^{-1}\bigr).$$
+\end{thm}
+
+In particular, if $S$ is a level surface of $g$ and $F$ be a short
+chart then for any $p\in S$
+$$I\!I_S(X,X)\le I\!I_{F(S)}(dF(X),dF(X)).$$
+
+
+\begin{thm}{B.2 Definition.} Let $X_n \buildrel {GH} \over \rightarrow X$ be a
+converging sequence of metric spaces and $f_n\:X_n\to X$ be correspondent
+sequence of Hausdorff approximations.
+We say that a sequence of measures $\mu_n$ on $X_n$ weakly converge to
+measure $\mu$ on $X$ if for any continuous function $\alpha$ with compact
+support on $X$ we have $\int_{X_n} \alpha\circ f_nd\mu_n\to \int_{X} \alpha d\mu$.
+\end{thm}
+
+
+The proof of the following result I heard from G. Perelman about
+seven years ago. The proof below should be close to the original
+but some ideas might differ.
+
+
+\begin{thm}{B.3 Theorem.} Let $M_n$ be a sequence of Riemannian $m$-manifolds with curvature
+$\ge \kappa$ which Lipschitz converge to a closed Riemannian manifold $M$.
+Then scalar curvature on $M_n$ converges weakly to the scalar curvature on $M$.
+(that is, $Sc_{g_n}dv_{g_n}$ converges weakly to $Sc_{g}dv_{g}$).
+\end{thm}
+
+
+Let us note that if one has no lower bound for curvature then
+there are examples when limit of Scalar curvatures is smaller than
+Scalar curvature of the limit, and it is unknown whether it could
+also be bigger.
+
+
+Let us prepare the following Lemma (which is in fact a partial case of the theorem):
+
+
+\begin{thm}{B.4 Lemma.}
+ Let $F_n$ be a sequence of smooth convex hyper-surfaces in $\RR^{m+1}$ which Hausdorff converges to a smooth convex hyper-surface $F$.
+ Let $Sc(F)$ and $Sc(F_n)$ denote scalar curvatures of $F$ and $F_n$
+and $h(F)$, $h(F_n)$ denote $m$-Hausdorff measure of the
+correspondent hyper-surface. Then $Sc(F_n)dh(F_n)$ converges weakly to $Sc(F)dh(F)$
+\end{thm}
+
+
+\parit{Proof of Lemma B.4.} Let $\alpha$ be a continuous function
+with compact support in $\RR^{m+1}$. Let us denote by $C_r(F)$ the
+set of points in $\RR^{m+1}$ which lie on outgoing normal rays to
+the hyper-surface $F$ on the distance $< r$ to the hyper-surface.
+Let us define $\alpha_F\:C_\infty(F)\to \RR$,
+$\alpha_F(x)=\alpha(y)$ where $y\in F$ is a closest point on the
+hyper-surface.
+
+Now, it is well known and easy to see that
+$\int_{C_r(F)}\alpha_Fdv$ is a polynomial of degree $m$ on $r$,
+moreover, the quadratic term is exactly $r^2\int_F\alpha Sc(F)
+dh(F)$
+
+Now if we have $F_n\to F$, then $C_r(F_n)$ converge to $C_r(F)$
+and $\alpha_{F_n}$ converge to $\alpha_{F}$. Therefore,
+$\int_{C_r(F_n)}\alpha_{F_n}dv\to\int_{C_r(F)}\alpha_Fdv$ and the
+ coefficient with $r^2$ of correspondent polynomials also converges.
+That finishes the proof.\qeds
+
+
+\parit{Proof of Theorem B.3.} We first want to construct special
+distance-like charts in a neighborhood of any point in $M$
+together with some nice approximating charts on $M_n$.
+
+
+\begin{thm}{B.5 Lemma} Given $p\in M$, $v\in T_p^*(M)$ and $\epsilon>0$
+there is $\delta>0$ and sequence $M_n\ni p_n\to p\in M$ and
+sequence of convex functions $f_n\:B_\delta(p_n)\subset M_n\to \RR$
+which converges to a convex function $f\:B_\delta(p)\subset M\to
+\RR$ such that $d_pf=v$, $|f''|<\epsilon$ everywhere on
+$B_\delta(p)$.
+\end{thm}
+
+
+\parit{Proof of Lemma B.5.} Consider an orthonormal basis $\{e_i\}$
+in $\T_p M$ such that $\sum_i e_i=cv$. Take $r >0$ an let
+$a_i=\exp_p r e_i$. Now $f=\sum_i \phi\circ\text{dist}_{a_i}$,
+where $\phi(x)=\alpha \log x-\beta x^2$ if dim$(M)=2$ and
+$\phi(x)=\alpha \frac{1}{x^{n-2}}-\beta x^2$ if dim$(M)>2$. The
+same arguments as in [PP]4.3 show that $f$ satisfy the conditions
+in the Lemma for appropriately chosen $\alpha$ and $\beta$, in a
+small ball $B_\delta(p)$.
+
+Now to construct an approximation of this function construct a
+sequence $a_{i,n}\to a_i$ for each $i$ and take $f_n=\sum_i
+\phi\circ\text{dist}_{a_{i,n}}$. Again the same reasoning as in
+[PP]4.3 proves that there is $\epsilon>0$ such that for large $n$
+the function is convex in a $\delta$-neighborhood of $p_n$.\qeds
+
+
+Now we may take any orthonormal basis ${v_i}\subset \T^*_p M$ and
+construct a function $f_i\:B_\delta(p)$ together with an approximations
+$f_{i,n}\:B_\delta(p_n)$. In addition to the above properties these
+functions will be almost orthogonal for a small enuf $\delta$;
+that is, one can assume
+that angle between level surfaces lies in between $\pi/2\pm\epsilon$.
+
+
+Now we start induction by dimension, we can take dim$=2$ as a base, in which case convergence follows from Gauss--Bonnet formula. Now assume we already proved it for all dimensions $<m$.
+
+To save space/time on the notation let us agree that extra index
+$n$ will always denote correspondent babe for $M_n$.
+
+Let $p\in M$ and $S_1,S_2,...,S_m$ be one-parameter families of
+ co-ordinate surfaces $f_i=c$.
+Let us denote by $Sc_i$ is the ``scalar'' curvature of directions tangent  to $S_i$, in other words $Sc_i=Sc-Ricc(u_i)$ where $u_i$ is unit vector field normal to $S_i$.
+Note that from lower curvature bound we have $|\text{Rm}|<c_1+c_2Sc$
+and therefore $(1+\alpha)(m-2)Sc=Sc_1+Sc_2+...+Sc_m$
+where $\alpha$ depend on angles between these co-ordinate
+surfaces and $\alpha\to 0$
+as all these angles converge to $\pi/2$, in particular as $\epsilon\to 0$.
+
+
+Let $Sc(S_i)$ be the scalar curvature of the intrinsic metric of the correspondent
+co-ordinate surface. Since the Jacobian of our charts converges to the Jacobian of
+the limit chart from the induction hypothesis we have $Sc({S_{i,n}})dv_{g_n}$
+converges weakly to $Sc(S_i)dv_g$.
+
+From Gauss formula we have $Sc_i+G(S_i)= Sc(S_i)$, where
+$G(S_i)=\sum_{i\not=j}k_ik_j$ where $k_i$ are the principal
+curvatures of $S_i$. Since each $S_i$ is convex
+$$Sc_i\le Sc(S_i)\ge G(S_i).$$
+Therefore, after passing to a subsequence
+$Sc_{i,n}$ should converge weakly to some
+$\bar{Sc}_i\le Sc(S_i)\le Sc_i+n(n-1)\epsilon^2$.
+
+Now let us prove the following lower bound: $\bar {Sc}_i\ge  Sc_i-C\epsilon^2$ for some $C=C(m)$.
+
+The inequality above also insure that after passing to a subsequence $G(S_{i,n})$
+ converges to some measure $\bar G(S_i)$ and obviously
+$\bar Sc_i=Sc(S_i)-\bar G(S_i)\ge Sc_i-\bar G(S_i)$
+therefore it is enuf to show that $\bar G(S_i)\le C\epsilon^2$ for some fixed $C$.
+
+To give this last estimate let us construct a new chart similar to
+one before, $H=(h_1,h_2,...,h_m)$ with the approximations
+$H_n=(h_{1,n},h_{2,n},...,h_{m,n})$ such that $\partial f/\partial
+h_i<-1/10m$. From the Claim above we have that $G(S_n)\le c
+G(H(S_n))$ as well as $G(S)\le c G(H(S))\le C\epsilon^2$
+
+Now $H(S_n)$ converges to $H(S)$ as convex hyper-surfaces in $\RR^m$
+and applying Lemma we get $G(H(S_n))$ converges weakly to $G(H(S))$.
+
+Since for any $\epsilon>0$ there is a finite covering of $M$ by charts as in Lemma B.5 we obtain the Theorem. \qeds
+
+
+Along the same lines one can prove stronger statements:
+
+\begin{thm}{Smooth Proposition} Let $(M_n,g_n)$ be a sequence of
+Riemannian $m$-manifolds with curvature $\ge \kappa$ which
+GH-converges to a Riemannian manifold $(M,g)$ of the same
+dimension $=m$. Then there is a sequence reparameterizations
+(diffeomorphisms) $f_n\:M\to M_n$, such that curvature tensor of
+$df_n^*(g_n)$ weakly converges to the curvature tensor of $g$ on
+$M$.
+\end{thm}
+
+
+\begin{thm}{Corollary} Let $R$ be an $\SO(\T)$ invariant convex set in $\A^4(\T)$. Assume
+that there is a lower bound $\kappa>-\infty$ for sectional curvature in $R$.
+Let $M_n$ be a sequence of Riemannian manifolds with curvature tensor from $R$ at each point which converges to a Riemannian manifold $M$ of the same dimension. Then the curvature tensor at any point of $M$ is from $R$.
+\end{thm}
+
+
+For example, smooth limit of manifolds with positive curvature
+operator must have positive curvature operator.
+
+ Note that this corollary can not hold for general
+$\SO(\T)$ invariant convex set in $\A^4(\T)$, for example as it shown
+in [Loh1], [Loh2] it is not true for sets $R=\{r\in
+\A^4\:Ricci(r)\le c\}$ curvature and for $R'=\{r\in \A^4\mid c\le
+Sc(r)\le c+\epsilon\}$.
+Altho I believe it should be still true
+with much more relaxed limitations on $R$.
+
+
+
+
+Finally one can give a singular version of this result which we need in our paper:
+
+First let us describe the singular curvature tensor of a polyhedral space. 
+Assume
+we have a $1\pm\epsilon$-bi-Lipschitz parametrization of polyhedral $P$
+by smooth
+Riemannian manifold $f\:M\to P$, such that $f^{-1}$ is smooth on each simplex.
+One can think about $P$ as $(M,d)$ where $d$ is a singular metric.
+Now let us define the curvature tensor of $d$ as following: it's support is the
+ image of $(n-2)$-skeleton of $P$ and on each $(n-2)$ simplex it is defined as
+$h_{n-2}(2\pi-\omega)\alpha$ where $h_{n-2}$ is the Hausdorff
+measure of this image, $\omega$ is the total angle around this
+simplex $\Delta$ and $\alpha=dx\wedge dy$ is a bi-vector field
+with the following properties: $|\alpha|=1$ everywhere on the
+image of simplex and $\alpha|_{f^{-1}(\Delta)}=0$.
+
+
+
+
+
+\begin{thm}{Singular Proposition.} Let $P_n$ be a polyhedral $m$-spaces
+with curvature $\ge \kappa$ which GH-converges to a Riemannian
+manifold $(M,g)$ of the same dimension $=m$. Then there is a
+sequence smooth parameterizations $f_n\:M\to P_n$, such that the
+described singular curvature tensor  weakly converges to the
+curvature tensor of $g$ on $M$.
+\end{thm}
+
+
+As well as in the corollary above, since the cosectional curvature of $(M,d_n)$ is positive, we get that the curvature tensor on the limit $(M,g)$ has positive cosectional curvature
+and that proves the first part of the Local Theorem 0.1.
+
+
+
+\section*{References}
+
+
+[Al] Aleksandrov, A. D. Vypuklye mnogogranniki.
+(Russian) [Convex Polyhedra] Gosudarstv. Izdat. Tehn.-Teor. Lit.,
+Moscow-Leningrad, 1950. 428 pp.
+
+[Ch] Cheeger, Jeff
+On the spectral geometry of spaces with cone-like singularities.
+Proc. Nat. Acad. Sci. U.S.A. 76 (1979), no. 5,
+2103--2106.
+
+[Grom]${}_{\text{PDR}}$ Gromov, Mikhael Partial differential relations.
+Ergebnisse der Mathematik und ihrer Grenzgebiete
+(3) [Results in Mathematics and Related Areas (3)],
+9. Springer-Verlag, Berlin-New York, 1986. x+363 pp.
+/Russian translation ``Mir'', Moscow, 1990. 536 pp.
+
+[Grom]${}_{\text{SGMC}}$ Gromov, M.
+Sign and geometric meaning of curvature. (English. English, Italian summary)
+Rend. Sem. Mat. Fis. Milano 61 (1991), 9--123 (1994).
+
+[GW] Grove, Karsten; Wilhelm, Frederick Metric constraints on exotic spheres via Alexandrov geometry. J. Reine Angew.
+Math. 487 (1997), 201--217
+
+[Hil] Hilbert, D.
+\"Uber die Darstellung definiter Formen als Summe von Formenquadraten.
+Mathem. Annalen Bd 32, S. 342-350 (1888), also in Hilbert, D.
+Gesammelte Abhandlungen. Zweiter Band. Algebra,
+Invariantentheorie, Geometrie. (German) Chelsea Publishing Co.,
+New York 1965 viii+453 pp.
+
+[Loh]$_{GLC}$ Lohkamp, Joachim Global and local curvatures.
+Riemannian geometry (Waterloo, ON, 1993), 23--51, Fields Inst.
+Monogr., 4, Amer. Math. Soc., Providence, RI, 1996.
+
+[Loh]$_{SCH}$ Lohkamp, Joachim Scalar curvature and hammocks.
+Math. Ann. 313 (1999), no. 3, 385--407.
+
+
+[MM]
+M. J. Micallef; J.D. Moore
+Minimal two-spheres and the topology of manifolds
+with positive curvature on totally isotropic two-planes
+Ann. of Math.
+127 pp.199-227
+1988
+
+
+[Mil] Milka, A. D.
+Multidimensional spaces with polyhedral metric of nonnegative curvature. I.
+(Russian) Ukrain. Geometr. Sb. Vyp.
+and
+Multidimensional spaces with polyhedral metric of nonnegative curvature. II.
+(Russian) Ukrain. Geometr. Sb. No. 7,
+(1969), 68--77, 185 (1970).
+
+[Pan] Panov, D. Polyhedral Kähler manifolds. Geom. Topol. 13 (2009), no. 4, 2205--2252.
+
+[Per] G.Perelman, DC Structure on Alexandrov Space, preprint
+
+[PP] Perelman, G. Ya.; Petrunin, A. M.
+Extremal subsets in Aleksandrov spaces and the generalized Liberman theorem.
+(Russian) Algebra i Analiz 5 (1993), no. 1,242--256;
+translation in St. Petersburg Math. J. 5 (1994), no. 1, 215--227
+
+[Pet] Petrunin, Anton Applications of quasigeodesics and gradient
+curves. Comparison geometry (Berkeley, CA, 1993--94), 203--219,
+Math. Sci. Res. Inst. Publ., 30
+
+[Zol] Zoltek, Stanley M. Nonnegative curvature operators: some nontrivial examples. J. Differential Geom. 14 (1979), no. 2,
+   303--315.
+
+\end{document}
