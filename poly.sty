@@ -1,4 +1,5 @@
-\usepackage{amssymb, amsfonts, amsmath, amsthm}
+\usepackage{amssymb, amsfonts, amsthm}
+\usepackage[intlimits]{amsmath}
 \usepackage{enumerate}
 \usepackage[colorlinks=true,
 citecolor=black,
@@ -9,15 +10,52 @@ menucolor=black,
 urlcolor=black,
 unicode=true %для того, чтобы закладки в pdf-файлах правильно отображались
 ]{hyperref}
+\usepackage{bm}
 
-%\usepackage[cp1251]{pdfstringdefPostHook}%эти две строчки для 
-
-
-%\usepackage[russian]{babel}   %надо, он много чего делает
-%\usepackage[cp1251]{inputenc} %просто говоришь что за кодировка, я предпочитаю эту потому, что в ней есть ковычки.
-
-\usepackage{epsfig,lpic,wrapfig}
+%\usepackage{epsfig,lpic,wrapfig}
 \usepackage{ushort}
+
+\usepackage[
+sorting=nty,%debug,
+bibencoding=auto,
+backend=biber,
+maxnames=10,
+%babel=other,
+%autolang=other,
+doi=false,
+url=false,
+style=numeric-comp,
+isbn=false]{biblatex}
+\usepackage{csquotes}
+
+\AtBeginDocument{%removes the last "and" in author field
+    \renewcommand*{\finalnamedelim}{,\space}
+}
+
+
+\AtEveryBibitem{\clearlist{language}}
+\AtEveryBibitem{\clearlist{note}}
+\renewbibmacro{in:}{}
+\renewcommand*{\bibfont}{\scriptsize}
+
+\addbibresource{library.bib}
+
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+\DeclareFieldFormat{pages}{#1}
+%removes p. in the cites
+
+\usepackage{accsupp}
+\usepackage{soulutf8}
+\sodef\an{}{.1em}{.5em plus.1em}{.5em plus.1em minus.1em}
+
+\newcommand\ann[1]{%
+    \BeginAccSupp{method=escape,ActualText={\detokenize{#1}}}%
+      \an{#1}%
+    \EndAccSupp{}%
+}
+
+\def\emph{\ann}
 
 % Fix latex
 \def\smallskip{\vskip\smallskipamount}
@@ -40,7 +78,7 @@ unicode=true %для того, чтобы закладки в pdf-файлах правильно отображались
 %THEOREM
 \newcounter{thm}[section]
 \renewcommand{\thethm}{\thesection.\arabic{thm}}
-\def\claim#1{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf \arabic{section}.\arabic{thm}. #1.}
+\def\claim#1{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf \thesection.\arabic{thm}. #1.}
 \it\ %\ignorespaces
 }
 \def\endclaim{
@@ -49,9 +87,13 @@ unicode=true %для того, чтобы закладки в pdf-файлах правильно отображались
 
 \def\noi{\noindent}%  
 
+\def\ad{\mathrm{ad}}
+\def\diag{\mathrm{diag}}
 \def\EE{\mathbb{E}}%
 \def\FF{\mathbb{F}}%
+\def\G{\mathrm{G}}
 \def\II{\mathbb{I}}
+\def\Im{\mathrm{Im}}
 \def\JJ{\mathbb{J}}
 \def\LL{\mathbb{L}}
 \def\MM{\mathbb{M}}% 
@@ -62,9 +104,12 @@ unicode=true %для того, чтобы закладки в pdf-файлах правильно отображались
 \def\CC{\mathbb{C}}
 \def\ZZ{\mathbb{Z}}% 
 \def\RP{\RR\mathrm{P}}
+\def\Ricc{\mathrm{Ricc}}
+\def\Sc{\mathrm{Sc}}
 \def\CP{\CC\mathrm{P}}
 \def\Rm{\mathrm{Rm}}
 \def\GL{\mathrm{GL}}
+\def\vol{\mathrm{vol}}
 
 \def\~{\tilde}
 \def\eps{\varepsilon}
